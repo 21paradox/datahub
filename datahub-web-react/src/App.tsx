@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import Cookies from 'js-cookie';
 import { message } from 'antd';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache, ServerError } from '@apollo/client';
 import { onError } from '@apollo/client/link/error';
 import { ThemeProvider } from 'styled-components';
