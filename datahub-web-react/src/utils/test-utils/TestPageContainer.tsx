@@ -49,7 +49,7 @@ export default ({ children, initialEntries }: Props) => {
         writable: true,
         value: `${CLIENT_AUTH_COOKIE}=urn:li:corpuser:2`,
     });
-    jest.mock('js-cookie', () => ({ get: () => 'urn:li:corpuser:2' }));
+    // jest.mock('js-cookie', () => ({ get: () => 'urn:li:corpuser:2' }));
 
     return (
         <ThemeProvider theme={defaultThemeConfig}>

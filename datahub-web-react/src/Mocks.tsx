@@ -622,6 +622,17 @@ export const dataset3WithLineage = {
     },
 };
 
+for (let i = 0; i < 1000; i++) {
+    dataset3WithLineage.upstream.relationships.push({
+        type: 'DownstreamOf',
+        direction: RelationshipDirection.Outgoing,
+        entity: {
+            ...dataset4,
+            urn: `urn:li:dataset:A${i}`,
+        },
+    });
+}
+
 export const dataset4WithLineage = {
     ...dataset4,
     upstream: {
@@ -654,6 +665,27 @@ export const dataset4WithLineage = {
         ],
     },
 };
+
+export const dataSetArr = [] as any[];
+for (let i = 0; i < 1000; i++) {
+    dataSetArr.push({
+        ...dataset4WithLineage,
+        urn: `urn:li:dataset:A${i}`,
+        upstream: null,
+        downstream: {
+            start: 0,
+            count: 1,
+            total: 1,
+            relationships: [
+                {
+                    type: 'DownstreamOf',
+                    direction: RelationshipDirection.Incoming,
+                    entity: dataset3,
+                },
+            ],
+        },
+    });
+}
 
 export const dataset5WithCyclicalLineage = {
     ...dataset5,
